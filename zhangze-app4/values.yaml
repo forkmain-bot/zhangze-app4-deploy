@@ -4,27 +4,27 @@ servie-four:
     repository: ghcr.io/forkmain-bot/repo-four
     tag: main
   imagePullSecrets:
-    - name: zhangze-app4-docker
+  - name: zhangze-app4-docker
   ingress:
     annotations:
       nginx.ingress.kubernetes.io/rewrite-target: /$2
     className: nginx
     enabled: true
     hosts:
-      - host: zhangze-app4-4dhbrh.forkmain.cloud
-        paths:
-          - path: (/|$)(.*)
-            pathType: ImplementationSpecific
+    - host: zhangze-app4-4dhbrh.forkmain.cloud
+      paths:
+      - path: /(/|$)(.*)
+        pathType: ImplementationSpecific
   nocalhost:
     command:
       debug:
-        - ""
+      - ""
       run:
-        - yarn
-        - install
-        - '&&'
-        - yarn
-        - dev
+      - yarn
+      - install
+      - '&&'
+      - yarn
+      - dev
     configPath: conf/nocalhost.yaml
     env: null
     gitURL: https://github.com/forkmain-bot/repo-four.git
@@ -35,6 +35,3 @@ servie-four:
     remoteDebugPort: 9009
   service:
     targetPort: 3000
-repo-four:
-  image:
-    tag: 6394a99
