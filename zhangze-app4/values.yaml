@@ -13,7 +13,7 @@ servie-four:
     hosts:
     - host: zhangze-app4-4dhbrh.forkmain.cloud
       paths:
-      - path: /(/|$)(.*)
+      - path: (/|$)(.*)
         pathType: ImplementationSpecific
   nocalhost:
     command:
